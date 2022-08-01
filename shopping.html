@@ -1,12 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ include file="session_check.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>bookmark</title>
+<title>shopping</title>
 <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -17,36 +14,15 @@
 font-size: 1.2em;
 margin: 10px;
 }
-#table1{
-margin: 0px 10px;
-}
-#table1 img{
-width:50px; height:50px;
-border-radius: 30px;
-}
-#table2{
-width: 100%;
-margin: 10px;}
-
-.category{
-width:200px; height:70px;
-border-radius: 20px;
-background-position:center center;
-background-size: 100%;
-background-repeat:no-repeat;
-padding: 10px;
-margin: 5px;
-color: white;
-font-size: 17px;
-}
-
 #footer{
+padding: 5px 0px;
 background: white;
 text-align: center;
-display: flex;
-justify-content: space-around;
-font-size: 12px;
-padding : 10px;
+font-size: 15px;
+}
+#footer table td{
+cursor:pointer;
+padding: 6px;
 }
 #page1{
 background: white;
@@ -66,9 +42,6 @@ flex-direction: column;
 
 #darkmod{
 font-size: 12px;
-}
-#panelmenu{
-display: inline;
 }
 #footer i{font-size: 20px;}
 a:link{text-decoration:none;color: #666666;}
@@ -100,78 +73,28 @@ function nightmod(){//다크모드
 	}
   }
 }
-<% String context=request.getContextPath();
-String message_revise = (String)request.getParameter("message_revise");
-String login_message = (String)request.getParameter("login_message");
-String join_message = (String)request.getParameter("join_message");
-if(message_revise != null){  
-%>
-alert("<%= message_revise %>");
-<%}else if(join_message != null){ %>
-alert("<%= join_message %>");
-<%}else if(login_message != null){ %>
-alert("<%= login_message %>");
-<%}%>
-
-function view(userid){
-	document.form1.userid.value = userid; 
-	document.form1.submit();
+function shop(){
+	var price = Number(document.getElementById("total").defaultValue); 
+	var result="";
+	for(var i=1; i<=4;i++){
+		var chkObj = document.getElementById("opt"+i);
+		if(chkObj.checked){
+			price += Number(chkObj.value);
+		}
+	}
+	result = price.toLocaleString();
+	document.getElementById("total").value= result;
 }
-$(function(){
-	
-	$("#logout").click(function(){
-		location.href="<%= context%>/myapp/logout.do";
-	});
-});
+
 </script>
 </head>
 <body>
-<!--아이디 정보 -->
-<form name="form1" method="post" action="/web02/myapp/view.do">
- <input type="hidden" name="userid">
-</form>
 <!-- 본문영역  -->
 <div data-role="page" id="page1">
-<!-- 메뉴패널 -->
- <div data-role="panel" id="panel_menu" data-display="overlay" data-theme="a">
-   <p class="ul-li-aside"><a href="#" data-rel="close"><i class="fa-solid fa-xmark"></i></a></p>
-  <table id="table1">
-   <tr>
-    <td rowspan="2"><img src="https://www.nicepng.com/png/detail/105-1053345_comment-from-dj-buck-perfil-anonimo.png" width="50px" height="50px" ></td>
-    <td style="color:#666666;font-size:15px;font-weight:bold;"><%= session.getAttribute("userid") %></td> 
-    <td><a href="#" id="logout" data-role="none"style="font-size:12px;">로그아웃</a></td></tr>
-   <tr><td style="color:#afafaf; font-size:10px;"> 친구초대시<br>만원 쿠폰팩 지급!</td></tr>
-  </table>
-   <p><table id="table2" >
-   <colgroup><col style="width:25%"><col style="width:25%">
-   <col style="width:25%"><col style="width:25%"></colgroup>
-   <tr style="font-size:13px;color:#666666;">
-    <td>에너지</td><td>쿠폰</td><td>쿠폰</td><td>쿠폰</td>
-    </tr>
-    <tr style="font-size:20px;color:#666666;font-weight:bold;">
-    <td>0</td><td>0</td><td>0</td><td>0</td>
-    </tr>
-  </table><br>
-  <ul data-role="listview" id="menulist">
-   <li data-role="listdivider" style="font-size: 13px; color:#afafaf; ">내 활동</li>
-    <li><a href="#" onclick="view('<%= session.getAttribute("userid") %>')">내정보</a></li>
-    <li><a href="#">친구초대</a></li>
-    <li data-role="listdivider" style="font-size: 13px; color:#afafaf; ">고객센터</li>
-    <li><a href="#">공지사항</a></li>
-    <li><a href="#">FAQ</a></li>
-    <li><a href="#">고객센터 문의</a></li>
-    <li data-role="listdivider"style="font-size: 13px; color:#afafaf; ">설정</li>
-    <li><a href="#">설정</a></li>
-    <li><a href="#">약관 및 정책</a></li>
-    <li><a href="#">오픈소스 라이선스</a></li>
-  </ul>
- </div>
-
    <!-- 헤더  -->
    <div data-role="header" data-position="fixed" id="header">
-   <h1>북마크</h1>
-  <a href="#panel_menu"  id="panelmenu" data-role="none" style="font-size: 20px; padding: 10px;">
-  <i class="fa-solid fa-bars"></i></a>
+   <a data-rel="back" data-role="none" style="font-size: 20px; padding: 10px;"><i class="fa-solid fa-arrow-left"></i></a>
+   <h1>장바구니</h1>
   <a href="#" data-role="none"style="margin: 10px;"><select id="nightmod" data-role="slider" onchange="nightmod()">
   <option value="day" selected>주간</option>
   <option value="night">야간</option>
@@ -187,8 +110,10 @@ $(function(){
       <p style="color:#a8a8a8; font-size:12px;">마포/서대문/은평</p>
       <p>간단하게 스트레스 풀 수있는</p>
       <p>특별한 니들펠트 원데이클래스</p>
-      <p>⭐⭐⭐⭐⭐ 후기 103</p>
-     </a></li>
+      <p>⭐⭐⭐⭐⭐ 후기 103</p> </a>
+      <p style="text-align:right; font-weight:bold;">가격 25,000원 
+      <input type="checkbox" data-role="none" name="opt1" id="opt1" value="25000" onclick="shop()"></p>
+     </li>
      <li><a href="#"><img src="image/investment.png">
       <p class="ui-li-aside">07.08 📌</p>
       <h4>해외투자 완전정복</h4>
@@ -196,7 +121,10 @@ $(function(){
       <p>[1부]22년 하반기 세계증시핵심요약</p>
       <p>[2부]해외투자 포트폴리오 만들기</p>
       <p>⭐⭐⭐⭐⭐ 후기 406</p>
-     </a></li>
+     </a>
+     <p style="text-align:right;font-weight:bold;">가격 50,000원 
+      <input type="checkbox" data-role="none" name="opt2" id="opt2" value="50000" onclick="shop()"></p>
+     </li>
      <li><a href="#"><img src="image/madlen.png">
       <p class="ui-li-aside">07.10 📌</p>
       <h4>마들렌 클래스</h4>
@@ -204,7 +132,10 @@ $(function(){
       <p>갓 구운 휘낭시에와 마들렌을 직접?!</p>
       <p>정원 4명으로 프라이빗한 베이킹</p>
       <p>⭐⭐⭐⭐⭐ 후기 201</p>
-     </a></li>
+     </a>
+     <p style="text-align:right;font-weight:bold;">가격 30,000원 
+      <input type="checkbox" data-role="none" name="opt3" id="opt3" value="30000" onclick="shop()"></p>
+     </li>
      <li><a href="#"><img src="image/whisky.png">
       <p class="ui-li-aside">07.13 📌</p>
       <h4>쉬운 위스키(입문용)</h4>
@@ -212,16 +143,24 @@ $(function(){
       <p>위스키 쌩초짜를 위한</p>
       <p>가장 기초적인 수업진행.</p>
       <p>⭐⭐⭐⭐⭐ 후기 10</p>
-     </a></li>
+     </a>
+     <p style="text-align:right;font-weight:bold;">가격 30,000원 
+      <input type="checkbox" data-role="none" name="opt4" id="opt4" value="30000" onclick="shop()"></p>
+     </li>
    </ul>
    </div>
 <!--footer바  -->
   <div id="footer" data-role="footer" data-position="fixed">
-   <span><a href="index.html" rel="external"><i class="fa-solid fa-house"></i><br>홈</a></span>
-   <span><a href="category.html" rel="external"><i class="fa-solid fa-bars"></i><br>카테고리</a></span>
-   <span><a href="feed.html" rel="external"><i class="fa-solid fa-border-all"></i><br>피드</a></span>
-   <span><a href="bookmark.jsp" rel="external"><i class="fa-solid fa-bookmark"></i><br>북마크</a></span>
-   <span><a href="shopping.html" rel="external"><i class="fa-solid fa-cart-shopping"></i><br>장바구니</a></span>
+  <table width="100%">
+  <colgroup>
+   <col style="width: 25%">
+   <col style="width: 25%">
+   <col style="width: 50%">
+  </colgroup>
+   <tr><td>총 금액 : </td>
+   <td><input type="text" name="total" id="total" value="0" readonly="readonly"></td>
+   <td style="background:#475aff; color:white; border-radius: 20px;">구매하기</td></tr>
+   </table>
   </div>
  </div>
 </body>

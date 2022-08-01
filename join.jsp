@@ -94,11 +94,11 @@ String context = request.getContextPath();
    <div id="login_con">
       <table>
        <tr>
-        <td><label>아이디</label></td>
+        <td><label>아이디 *</label></td>
         <td><input id="userid"  required></td>
        </tr>
        <tr>
-        <td><label>비밀번호</label></td>
+        <td><label>비밀번호 *</label></td>
         <td><input type="password" id="passwd" required></td>
        </tr>
         <tr>
