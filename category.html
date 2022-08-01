@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://kit.fontawesome.com/fdfee59c02.js" crossorigin="anonymous"></script>
+<style type="text/css">
+#header{background: white;}
+.ui-header .ui-title{
+font-size: 1.2em;
+margin: 10px;
+}
+#table1{
+margin: 0px 10px;
+}
+#table1 img{
+width:50px; height:50px;
+border-radius: 30px;
+}
+#table2{
+width: 100%;
+margin: 10px;}
+#table3{
+margin: 5% 0px;
+font-size: 12px;
+text-align: left;
+width:100%;
+max-width: 500px;
+color: #666666;
+padding: 5px;
+}
+.category{
+width:200px; height:70px;
+border-radius: 20px;
+background-position:center center;
+background-size: 100%;
+background-repeat:no-repeat;
+padding: 10px;
+margin: 5px;
+color: white;
+font-size: 17px;
+}
+#cat1{
+background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url("image/fitness.png");
+}
+#cat2{
+background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url("image/outdoor.png");
+}
+#cat3{
+background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url("image/diy2.png");
+}
+#cat4{
+background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url("image/cooking.png");
+}
+#cat5{
+background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url("image/sport.png");
+}
+#cat6{
+background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url("image/art.png");
+}
+#cat7{
+background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url("image/self.png");
+}
+#cat8{
+background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url("image/online.png");
+}
+#cat9{
+background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url("image/beauty.png");
+}
+#cat10{
+background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url("image/meet.png");
+}
+#cat11{
+background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url("image/store.png");
+}
+#cat12{
+background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url("image/trip.png");
+}
+#cat13{
+background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url("image/mind.png");
+}
+#cat14{
+background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),url("image/baking.jpg");
+}
+#footer{
+background: white;
+text-align: center;
+display: flex;
+justify-content: space-around;
+font-size: 12px;
+padding : 10px;
+}
+#page1{
+background: white;
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+.content{
+background: white;
+margin:10px 0px;
+padding: 10px;
+display: flex;
+align-items: left;
+max-width: 1000px;
+flex-direction: column;
+}
+.title{
+align-items: left;
+padding: 0px 20px;
+margin: 20px 0px;
+}
+#darkmod{
+display: flex;
+justify-content: flex-end;
+font-size: 12px;
+}
+#panelmenu{
+display: inline;
+}
+#footer i{font-size: 20px;}
+a:link{text-decoration:none;color: #666666;}
+a:visited{text-decoration:none;color: #666666;}
+a:hover{text-decoration:none;color: #666666;}
+#footer a:link{text-decoration:none;color: #666666;}
+#footer a:visited{text-decoration:none;color: #666666;}
+#footer a:hover{text-decoration:none;color: #666666;}
+
+</style>
+<script type="text/javascript">
+function nightmod(){
+	var nightmod = document.getElementById("nightmod");
+	for(var i=0; i<nightmod.length; i++){
+	if(nightmod.value=="night"){
+		document.getElementById("page1").style.backgroundColor = "black";
+		document.getElementById("header").style.backgroundColor = "black";
+		document.getElementsByClassName("content")[0].style.backgroundColor = "black";
+		document.getElementById("footer").style.backgroundColor = "black";
+		document.getElementById("footer").style.color = "white";
+		document.getElementById("page1").style.color = "white";
+		document.getElementById("header").style.color = "white";
+	}else{
+		document.getElementById("page1").style.backgroundColor = "white";
+		document.getElementById("header").style.backgroundColor = "white";
+		document.getElementsByClassName("content")[0].style.backgroundColor = "white";
+		document.getElementById("footer").style.backgroundColor = "white";
+		document.getElementById("footer").style.color = "black";
+		document.getElementById("page1").style.color = "black";
+		document.getElementById("header").style.color = "black";
+	}
+  }
+}
+</script>
+</head>
+<body>
+
+
+<!-- 본문영역  -->
+<div data-role="page" id="page1">
+<!-- 메뉴패널 -->
+ <div data-role="panel" id="panel_menu" data-display="overlay" data-theme="a">
+   <p class="ul-li-aside"><a href="#" data-rel="close"><i class="fa-solid fa-xmark"></i></a></p>
+  <table id="table1">
+   <tr>
+    <td rowspan="2"><img src="image/nobody.png" width="50px" height="50px" ></td>
+    <td style="color:#666666;font-size:13px;"><a href="login.html" rel="external">&nbsp;로그인 해주세요.</a></td> </tr>
+   <tr><td style="color:#afafaf; font-size:10px;">&nbsp;신규대원 5만원 쿠폰팩 지급!</td></tr>
+  </table>
+   <p><table id="table2" >
+   <colgroup><col style="width:25%"><col style="width:25%">
+   <col style="width:25%"><col style="width:25%"></colgroup>
+   <tr style="font-size:13px;color:#666666;">
+    <td>에너지</td><td>쿠폰</td><td>쿠폰</td><td>쿠폰</td>
+    </tr>
+    <tr style="font-size:20px;color:#666666;font-weight:bold;">
+    <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr>
+  </table><br>
+  <ul data-role="listview" id="menulist">
+   <li data-role="listdivider" style="font-size: 13px; color:#afafaf; ">내 활동</li>
+    <li><a href="#">결제내역</a></li>
+    <li><a href="#">친구초대</a></li>
+    <li data-role="listdivider" style="font-size: 13px; color:#afafaf; ">고객센터</li>
+    <li><a href="#">공지사항</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">고객센터 문의</a></li>
+    <li data-role="listdivider"style="font-size: 13px; color:#afafaf; ">설정</li>
+    <li><a href="#">설정</a></li>
+    <li><a href="#">약관 및 정책</a></li>
+    <li><a href="#">오픈소스 라이선스</a></li>
+  </ul>
+ </div>
+
+   <!-- 헤더  -->
+ <div data-role="header" data-position="fixed" id="header">
+   <h1>카테고리</h1>
+  <a href="#panel_menu"  id="panelmenu" data-role="none" style="font-size: 20px; padding: 10px;">
+  <i class="fa-solid fa-bars"></i></a>
+  <a href="#" data-role="none"style="margin: 10px;"><select id="nightmod" data-role="slider" onchange="nightmod()">
+  <option value="day" selected>주간</option>
+  <option value="night">야간</option>
+  </select></a>
+  </div>
+  
+   <!--content1 -->
+  <div data-role="content" class="content">
+    <!-- 카테고리배너 -->
+    <table id="table3" >
+    <tr>
+     <td id="cat1" class="category" onClick="location.href='fitness.html'"style="cursor:pointer;">피트니스</td>
+     <td id="cat2" class="category" onClick="location.href='#'"style="cursor:pointer;">아웃도어</td>
+     </tr><tr>
+     <td id="cat3" class="category" style="cursor:pointer;">공예DIY</td>
+     <td id="cat4" class="category" style="cursor:pointer;">쿠킹</td>
+     </tr><tr>
+     <td id="cat5" class="category" style="cursor:pointer;">스포츠</td>
+     <td id="cat6" class="category" style="cursor:pointer;">문화예슬</td>
+     </tr><tr>
+     <td id="cat7" class="category" style="cursor:pointer;">자기계발</td>
+     <td id="cat8" class="category" style="cursor:pointer;">온라인</td>
+     </tr><tr>
+     <td id="cat9" class="category" style="cursor:pointer;">뷰티</td>
+     <td id="cat10" class="category" style="cursor:pointer;">모임</td>
+     </tr><tr>
+     <td id="cat11" class="category" style="cursor:pointer;">스토어</td>
+     <td id="cat12" class="category" style="cursor:pointer;">여행</td>
+     </tr><tr>
+     <td id="cat13" class="category" style="cursor:pointer;">심리상담</td>
+     <td id="cat14" class="category" style="cursor:pointer;">베이킹</td>
+     </tr>
+    </table>
+  </div>
+
+<!--footer바  -->
+  <div id="footer" data-role="footer" data-position="fixed">
+   <span><a href="index.html" rel="external"><i class="fa-solid fa-house"></i><br>홈</a></span>
+   <span><a href="category.html" rel="external"><i class="fa-solid fa-bars"></i><br>카테고리</a></span>
+   <span><a href="feed.html" rel="external"><i class="fa-solid fa-border-all"></i><br>피드</a></span>
+   <span><a href="bookmark.jsp" rel="external"><i class="fa-solid fa-bookmark"></i><br>북마크</a></span>
+   <span><a href="login.jsp" rel="external"><i class="fa-solid fa-user"></i><br>로그인</a></span>
+  </div>
+ </div>
+</body>
+</html>

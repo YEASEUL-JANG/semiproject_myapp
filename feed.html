@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://kit.fontawesome.com/fdfee59c02.js" crossorigin="anonymous"></script>
+<style type="text/css">
+#header{background: white;}
+.ui-header .ui-title{
+font-size: 1.2em;
+}
+#table1{
+margin: 0px 10px;
+}
+#table1 img{
+width:50px; height:50px;
+border-radius: 30px;
+}
+#table2{
+width: 100%;
+margin: 10px;}
+#table3{
+font-size: 10px;
+text-align: center;
+width:100%;
+max-width: 500px;
+}
+#table3 img{
+width:78px; height:78px;
+border-radius: 45px;
+}
+.ui-dialog-contain {
+    width: 93.5%;
+    max-width: 500px;
+    margin: 10% auto 0em;
+    position: relative;
+    top: 8em;
+    }
+.slidebox{
+margin:0px; padding:0;box-sizing:border-box;}
+
+.slidebox ul, .slidebox li{
+list-style: none;
+padding:0px;
+margin:0px;}
+
+[name="slide"]{display:none;}
+
+.slidebox{max-width:500px; width:100%;margin:0px;text-align:center;}
+.slidebox img{max-width:100%; border-radius: 30px;
+}
+.slidebox .slidelist{
+white-space:nowrap;
+font-size:0;
+overflow:hidden;
+}
+.slidebox .slideitem{
+ position: relative;
+ display: inline-block;
+ vertical-align:middle;
+ width:100%;
+ transition:all .35s;
+}
+.slidebox .slideitem label{
+position: absolute;
+z-index:1;
+top:50%;
+transform:translateY(-50%);
+padding:20px;
+border-radius: 50%;
+cursor:pointer;
+}
+label.left{
+ left:20px;
+ opacity: 0.8;
+/*  background-image:url("image/left-arrow.png"); */
+ background-position:center center;
+ background-size: 50%;
+ background-repeat:no-repeat;
+}
+label.right{
+ right:20px;
+ opacity: 0.8;
+ /* background-image:url("image/right-arrow.png"); */
+ background-position:center center;
+ background-size: 50%;
+ background-repeat:no-repeat;
+}
+[id="slide01"]:checked ~ .slidelist .slideitem{transform:translateX(0); }
+[id="slide02"]:checked ~ .slidelist .slideitem{transform:translateX(-100%);}
+[id="slide03"]:checked ~ .slidelist .slideitem{transform:translateX(0%);}
+[id="slide04"]:checked ~ .slidelist .slideitem{transform:translateX(-100%);}
+[id="slide05"]:checked ~ .slidelist .slideitem{transform:translateX(-200%);}
+[id="slide06"]:checked ~ .slidelist .slideitem{transform:translateX(0%);}
+[id="slide07"]:checked ~ .slidelist .slideitem{transform:translateX(-100%);}
+[id="slide08"]:checked ~ .slidelist .slideitem{transform:translateX(-200%);}
+
+#footer{
+background: white;
+text-align: center;
+display: flex;
+justify-content: space-around;
+font-size: 12px;
+padding : 10px;
+}
+#page1{
+background: white;
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+.content{
+background: white;
+margin: 10px 0px;
+padding: 10px;
+display: flex;
+align-items: left;
+max-width: 800px;
+flex-direction: column;
+}
+.title{
+align-items: left;
+padding: 0px 20px;
+margin: 20px 0px;
+}
+#darkmod{
+display: flex;
+justify-content: flex-end;
+font-size: 12px;
+}
+#panelmenu{
+display: inline;
+}
+#footer i{font-size: 20px;}
+a:link{text-decoration:none;color: #666666;}
+a:visited{text-decoration:none;color: #666666;}
+a:hover{text-decoration:none;color: #666666;}
+#footer a:link{text-decoration:none;color: #666666;}
+#footer a:visited{text-decoration:none;color: #666666;}
+#footer a:hover{text-decoration:none;color: #666666;}
+
+</style>
+<script type="text/javascript">
+function nightmod(){
+	var nightmod = document.getElementById("nightmod");
+	for(var i=0; i<nightmod.length; i++){
+	if(nightmod.value=="night"){
+		document.getElementById("page1").style.backgroundColor = "black";
+		document.getElementById("header").style.backgroundColor = "black";
+		document.getElementsByClassName("content")[0].style.backgroundColor = "black";
+		document.getElementsByClassName("content")[1].style.backgroundColor = "black";
+		document.getElementsByClassName("content")[2].style.backgroundColor = "black";
+		document.getElementsByClassName("content")[3].style.backgroundColor = "black";
+		document.getElementById("footer").style.backgroundColor = "black";
+		document.getElementById("header").style.color = "white";
+		document.getElementById("page1").style.color = "white";
+	}else{
+		document.getElementById("page1").style.backgroundColor = "white";
+		document.getElementById("header").style.backgroundColor = "white";
+		document.getElementsByClassName("content")[0].style.backgroundColor = "white";
+		document.getElementsByClassName("content")[1].style.backgroundColor = "white";
+		document.getElementsByClassName("content")[2].style.backgroundColor = "white";
+		document.getElementsByClassName("content")[3].style.backgroundColor = "white";
+		document.getElementById("footer").style.backgroundColor = "white";
+		document.getElementById("header").style.color = "black";
+		document.getElementById("page1").style.color = "black";
+	}
+  }
+}
+</script>
+</head>
+<body>
+
+
+<!-- 본문영역  -->
+<div data-role="page" id="page1">
+<!-- 메뉴패널 -->
+ <div data-role="panel" id="panel_menu" data-display="overlay" data-theme="a">
+   <p class="ul-li-aside"><a href="#" data-rel="close"><i class="fa-solid fa-xmark"></i></a></p>
+  <table id="table1">
+   <tr>
+    <td rowspan="2"><img src="image/nobody.png" width="50px" height="50px" ></td>
+    <td style="color:#666666;font-size:13px;"><a href="login.html" rel="external">&nbsp;로그인 해주세요.</a></td> </tr>
+   <tr><td style="color:#afafaf; font-size:10px;">&nbsp;신규대원 5만원 쿠폰팩 지급!</td></tr>
+  </table>
+   <p><table id="table2" >
+   <colgroup><col style="width:25%"><col style="width:25%">
+   <col style="width:25%"><col style="width:25%"></colgroup>
+   <tr style="font-size:13px;color:#666666;">
+    <td>에너지</td><td>쿠폰</td><td>쿠폰</td><td>쿠폰</td>
+    </tr>
+    <tr style="font-size:20px;color:#666666;font-weight:bold;">
+    <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr>
+  </table><br>
+  <ul data-role="listview" id="menulist">
+   <li data-role="listdivider" style="font-size: 13px; color:#afafaf; ">내 활동</li>
+    <li><a href="#">내정보</a></li>
+    <li><a href="#">친구초대</a></li>
+    <li data-role="listdivider" style="font-size: 13px; color:#afafaf; ">고객센터</li>
+    <li><a href="#">공지사항</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">고객센터 문의</a></li>
+    <li data-role="listdivider"style="font-size: 13px; color:#afafaf; ">설정</li>
+    <li><a href="#">설정</a></li>
+    <li><a href="#">약관 및 정책</a></li>
+    <li><a href="#">오픈소스 라이선스</a></li>
+  </ul>
+ </div>
+ 
+   <!--header -->
+  <div data-role="header" data-position="fixed" id="header">
+  <a href="#panel_menu"  id="panelmenu" data-role="none" style="font-size: 20px; padding: 10px;">
+  <i class="fa-solid fa-bars"></i></a>
+  <h1>클라쓰피드&nbsp;<a href="#dialog1" data-role="button" data-rel="dialog"
+   data-icon="search" data-iconpos="notext" data-inline="true"></a></h1>
+  <a href="#" data-role="none"style="margin: 10px;"><select id="nightmod" data-role="slider" onchange="nightmod()">
+  <option value="day" selected>주간</option>
+  <option value="night">야간</option>
+  </select></a>
+  </div>
+  <!-- 본문영역 -->
+  <div data-role="content" class="content">
+   
+  <!--content1 -->
+  <div data-role="content" class="content" style="padding:0px;">
+  <table id="table1">
+   <tr>
+    <td rowspan="2" width="55px"><img src="image/loveme.jpg" width="50px" height="50px" ></td>
+    <td style="color:#666666;font-size:13px;">&nbsp;Bulelagoon</td> </tr>
+   <tr><td style="color:#afafaf; font-size:10px;">&nbsp;1시간 전</td></tr>
+  </table>
+    <div class="slidebox">
+     <input data-role="none" type="radio" name="slide" id="slide01" checked>
+     <input data-role="none"type="radio" name="slide" id="slide02">
+     <ul class="slidelist">
+      <li class="slideitem">
+       <div>
+        <label for="slide02" class="right"></label>
+        <a><img src="image/color.png"></a>
+       </div>
+      </li>
+      <li class="slideitem">
+       <div>
+        <label for="slide01" class="left"></label>
+        <a><img src="image/color2.png"> </a>
+       </div>
+      </li>
+     
+     </ul>
+    </div>
+    <ul data-role="listview" data-inset="true" data-count-theme="a">
+    <li ><a href="#" style="font-size: 12px;">국가공인 퍼스널컬러 컨설팅<span class="ui-li-count">⭐⭐⭐⭐⭐</span></a></li>
+   </ul>
+   <div data-role="collapsible"data-collapsed="false">
+    <h3>후기</h3>
+    <p>기대반 걱정반으로 갔는데 화알못인 사람도 쉽게 이해가도록 자세히 설명해주셔서 좋았어요!
+    무엇보다 지금까지 제 퍼스널컬러를 여름쿨으로 알고있었는데 제가 봄웜이었다니 믿기지가 않네요!</p>
+  </div>
+  </div>
+  <!--content2  -->
+  <div data-role="content" class="content" style="padding:0px;">
+  <table id="table1">
+   <tr>
+    <td rowspan="2" width="55px"><img src="image/self.png" width="50px" height="50px" ></td>
+    <td style="color:#666666;font-size:13px;">&nbsp;말랑이</td> </tr>
+   <tr><td style="color:#afafaf; font-size:10px;">&nbsp;2시간 전</td></tr>
+  </table>
+    <div class="slidebox">
+     <input data-role="none" type="radio" name="slide" id="slide03" checked>
+     <input data-role="none"type="radio" name="slide" id="slide04">
+     <input data-role="none"type="radio" name="slide" id="slide05">
+     <ul class="slidelist">
+      <li class="slideitem">
+       <div>
+        <label for="slide04" class="right"></label>
+        <a><img src="image/cake1.png"></a>
+       </div>
+      </li>
+      <li class="slideitem">
+       <div>
+        <label for="slide03" class="left"></label>
+        <label for="slide05" class="right"></label>
+        <a><img src="image/cake2.png"> </a>
+       </div>
+      </li>
+      <li class="slideitem">
+       <div>
+        <label for="slide04" class="left"></label>
+        <a><img src="image/cake3.png"> </a>
+       </div>
+      </li>
+     </ul>
+    </div>
+    <ul data-role="listview" data-inset="true" data-count-theme="a">
+    <li ><a href="#" style="font-size: 12px;">쉽게 만드는 퓨전떡케이크<span class="ui-li-count">⭐⭐⭐⭐⭐</span></a></li>
+   </ul>
+   <div data-role="collapsible"data-collapsed="false">
+    <h3>후기</h3>
+    <p>맛도 재미도 최고였구요, 너무 재미있었습니다! 할머니 생신이라 선물해드렸더니 너무 좋아하세요! 감사합니다~ 널리널리 전파할게요!</p>
+  </div>
+  </div>
+  
+  <!-- content3 -->
+  <div data-role="content" class="content" style="padding:0px;">
+  <table id="table1">
+   <tr>
+    <td rowspan="2" width="55px"><img src="image/mind.png" width="50px" height="50px" ></td>
+    <td style="color:#666666;font-size:13px;">&nbsp;쭈쭈바</td> </tr>
+   <tr><td style="color:#afafaf; font-size:10px;">&nbsp;2022년 7월 28일</td></tr>
+  </table>
+    <div class="slidebox">
+     <input data-role="none" type="radio" name="slide" id="slide06" checked>
+     <input data-role="none"type="radio" name="slide" id="slide07">
+     <input data-role="none"type="radio" name="slide" id="slide08">
+     <ul class="slidelist">
+      <li class="slideitem">
+       <div>
+        <label for="slide07" class="right"></label>
+        <a><img src="image/tea1.png"></a>
+       </div>
+      </li>
+      <li class="slideitem">
+       <div>
+        <label for="slide06" class="left"></label>
+        <label for="slide08" class="right"></label>
+        <a><img src="image/tea2.png"> </a>
+       </div>
+      </li>
+      <li class="slideitem">
+       <div>
+        <label for="slide07" class="left"></label>
+        <a><img src="image/tea3.png"> </a>
+       </div>
+      </li>
+     </ul>
+    </div>
+    <ul data-role="listview" data-inset="true" data-count-theme="a">
+    <li ><a href="#" style="font-size: 12px;">홍차 애프터눈 티 원데이클래스<span class="ui-li-count">⭐⭐⭐⭐⭐</span></a></li>
+   </ul>
+   <div data-role="collapsible"data-collapsed="false">
+    <h3>후기</h3>
+    <p>선생님도 너무 친절하시고 공간도 소품들도 다 너무 예뻐요ㅠ 다들 꼭 체험해보세요~~</p>
+  </div>
+  </div>
+  
+ 
+<!--footer바  -->
+  <div id="footer" data-role="footer" data-position="fixed">
+   <span><a href="index.html" rel="external"><i class="fa-solid fa-house"></i><br>홈</a></span>
+   <span><a href="category.html" rel="external"><i class="fa-solid fa-bars"></i><br>카테고리</a></span>
+   <span><a href="feed.html" rel="external"><i class="fa-solid fa-border-all"></i><br>피드</a></span>
+   <span><a href="bookmark.jsp" rel="external"><i class="fa-solid fa-bookmark"></i><br>북마크</a></span>
+   <span><a href="login.jsp" rel="external"><i class="fa-solid fa-user"></i><br>로그인</a></span>
+  </div>
+ 
+ </div>
+ </div><!--한페이지-->
+ 
+ <!-- 부연창 -->
+ <div data-role="page" id="dialog1" data-position="fixed">
+  <div data-role="header">
+   <h2>클래스피드란?</h2>
+  </div>
+  <div data-role="content">
+   <h3>피드를 통해 나를 표현하고<br>다른 대원들의 활동도 확인해보세요!😎</h3>
+   <p>클라쓰에서 즐거웠고 행복했던 순간들을 후기로만 남기기엔 아쉬웠다면 
+   피드로 다른 대원들에게 공유해보세요. 그리고 다른 대원들의 의견 및 피드도 구경하세요.</p>
+   <table id="table3" >
+    <tr>
+     <td><img src="image/meeting.jpg"></td>
+     <td><img src="image/baking.jpg"></td>
+     <td><img src="image/date.jpg"></td>
+     <td><img src="image/art.jpg"></td>
+     </tr>
+     </table>
+  </div>
+ </div>
+ 
+</body>
+</html>

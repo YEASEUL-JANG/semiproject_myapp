@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>yoga</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://kit.fontawesome.com/fdfee59c02.js" crossorigin="anonymous"></script>
+<style type="text/css">
+#header{background: white;}
+.ui-header .ui-title{
+font-size: 1.2em;
+}
+#table1{
+margin: 0px 10px;
+}
+#table1 img{
+width:50px; height:50px;
+border-radius: 30px;
+}
+.ui-grid-a, .ui-grid-b, .ui-grid-c{
+max-width: 400px;
+}
+.ui-block-a,.ui-block-b,.ui-block-c{
+margin:5px 0px;
+max-width:200px;
+}
+.ui-block-a.text1,.ui-block-b.text1,.ui-block-c.text1{
+font-size: 7px;
+color: #afafaf; 
+}
+.ui-block-a.text2,.ui-block-b.text2,.ui-block-c.text2{
+font-size: 12px;
+color: #666666;
+}
+.ui-block-a.img3,.ui-block-a.img4,.ui-block-b.img3,
+.ui-block-b.img4,.ui-block-c.img3,.ui-block-c.img4 {
+background-repeat : no-repeat;
+background-size: 100% 100%;
+height: 100px; width:100px; 
+cursor:pointer;
+margin: 12px;
+}
+.ui-block-a.img3{
+background-image: url("image/yoga2_1.png");
+}
+.ui-block-b.img3{
+background-image: url("image/yoga2_2.png");
+}
+.ui-block-c.img3{
+background-image: url("image/yoga2_3.png");
+}
+.ui-block-a.img4{
+background-image: url("image/yoga2_4.png");
+}
+.ui-block-b.img4{
+background-image:url("image/yoga2_5.png");
+}
+.ui-block-c.img4{
+background-image:url("image/yoga2_6.png");
+}
+#footer{
+padding: 5px 0px;
+background: white;
+text-align: center;
+font-size: 15px;
+}
+#footer table td{
+cursor:pointer;
+}
+#page1{
+background: afafaf;
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+#sec4 > span {
+display: flex;
+border-radius: 46%;
+padding: 5px 10px;
+}
+#table2 td{
+border-radius: 46%;
+border: 1px solid #b1dea9;
+background: #fbfff5;
+padding: 8px;
+}
+.content{
+background: white;
+margin: 0px 0px 10px 0px;
+display: flex;
+align-items: center;
+width: 100%;
+flex-direction: column;
+}
+.title{
+align-items: left;
+padding: 0px 20px;
+margin: 20px 0px;
+}
+#darkmod{
+display: flex;
+justify-content: flex-end;
+font-size: 12px;
+}
+#footer i{font-size: 20px;}
+a:link{text-decoration:none;color: #666666;}
+.ui-page-theme-a a:visited{text-decoration:none;color: #666666;}
+a:hover{text-decoration:none;color: #666666;}
+
+
+</style>
+<script type="text/javascript">
+function bookmark(){
+	document.getElementById("bookmark").style.color = "red";
+}
+</script>
+</head>
+<body>
+
+
+<div data-role="page" id="page1">
+  <!-- 헤더  -->
+   <div data-role="header" data-position="fixed" id="header">
+  <a href="#" data-rel="back" data-role="none" style="font-size: 20px; padding: 10px;">
+  <i class="fa-solid fa-arrow-left"></i></a>
+  <a href="index.html" rel="external" data-role="none" style="font-size: 20px; padding: 10px;">
+  <i class="fa-solid fa-house"></i></a>
+  </div>
+  
+<!-- 본문영역  -->
+   <!--content1 -->
+   <div data-role="content" class="content" id="sec1" align="center">
+   <img src="image/pilates01.png" width="100%" style="max-width:500px;"><br>
+   <b>[강남] 자세교정 요가 클리닉 <br>
+   교정프로그램&108배 (일일클래스)</b><br>
+   <b>29,000원</b>
+   <p><p>
+   <table id="table1">
+   <tr>
+    <td rowspan="2"><img src="image/yoga01.png" width="50px" height="50px" ></td>
+    <td style="color:#666666;font-size:13px;"><b>&nbsp;센스요가</b></td> </tr>
+   <tr><td style="color:#afafaf; font-size:10px;">&nbsp;프립 3 | 후기 1,033 | 저장 415</td></tr>
+   </table>
+  </div>
+  
+  <!--content2 -->
+  <div data-role="content" class="content" id="sec2" align="center">
+   <h4>클라쓰소개</h4>
+   <p><p><b>자세교정 전문 요가클리닉</b><br>
+	효과적 개별관리 지도가능한 프로그램 <br>
+	차별화된 자세교정 수련클래스입니다<br>
+ 	ABC설명으로 이해불가하니 체험바랍니다~💕<br></p>
+ 	<img src="image/yoga1_1.png" width="100%" style="max-width:500px;">
+ 	<p>하루중 온전하게 자신을 바라보는 시간이 있나요?<br>   
+	반복되는 일상속 언제나 다름없는 안정된<br>
+	리듬이 유지될거라  막연하게 믿고 있진 않나요?<br>
+	밥 먹고 잠 자듯 해야 할 관리를 미루고<br>
+	왠만한 불편함 통증은 참고 견디는 동안<br>
+	몸의 기능은 점점 저하되어 어느 순간<br>
+	내 몸에 병명이 붙혀지고 온갖 질환에 시달리게 됩니다
+	<p><img src="image/yoga1-2.png" width="100%" style="max-width:500px;"><br>
+	<b>개인매트 보관 / 공용도구 보관👌</b><br>
+	<p>교정요가는 이러한 근본원인 바로잡아<br>
+	본래상태로 되돌리는 수련과정입니다.<br>
+	바른 움직임 바른 호흡으로 이끌어 주고<br>
+	개개인의 몸을 쓰는 습관이 다른만큼<br>
+	심신상태나 통증도 다르게 나타납니다.<br>
+	각 증상에 따라 바른운동이 구분됩니다.
+	<p><img src="image/yoga01.png" width="100%" style="max-width:500px;"><br>
+	<b>삶의 질을 높이는 지혜로운 방법!<br>
+	나만을 위한 하루 한 시간 요가!</b>
+	<p>
+	<p><b>| 이런 점이 좋아요😃</b>
+	<ul>
+	<li>일반개인지도 교정효과 이상을 목적으로 개발된 센스요가 교정프로그램.</li>
+	<li>각자 신체 문제의 교정법을 알게되요</li>
+	<li>정기적 점검 받으며 바른관리가 되요</li>
+	</ul>
+	<p><b>| 이런 분들에게 추천드려요😃</b>
+	<ul>
+	<li>필라테스 요가 도수치료를 오래해도 자세교정이 안되는 분</li>
+	<li>교정수련하며 정기점검 받고 싶은 분</li>
+	<li>골반흉곽이 닫혀있고 유연성 부족</li>
+	<li>중급ㆍ고급 레벨업 교정받고 싶은 분</li>
+	</ul>
+  </div>
+  
+  
+  <!--content3 -->
+  <div data-role="content" class="content" id="sec3" align="center">
+   <h4>진행하는 장소</h4>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101197.
+  53032646439!2d126.76290675922974!3d37.56866010088137!2m3!1f0!2f0!3f0!3m2!
+  1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca1565a0c2a77%3A0x7d2b17ee56bc00a3!2sSense%20yoga!
+  5e0!3m2!1sko!2skr!4v1658839097980!5m2!1sko!2skr" width="400" height="400" 
+  style="border:0;" allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  
+  <!-- content4 -->
+  <div data-role="content" class="content" id="sec4">
+  <h4>포함사항</h4>
+  <table id="table2">
+  <tr>
+  <td>강습</td><td>매트</td><td>맞춤교정도구</td><td>도구마사지</td>
+  </tr>
+  </table>
+  <p><h4>불포함사항</h4>
+  <span style="border: 1px solid #d7a29a; background:#fff9f7">샤워시설</span>
+  <p><h4>준비물</h4>
+  <span style="border: 1px solid green;">즐거운 마음</span>
+ </div>
+  
+  <!--content5 -->
+  <div data-role="content" class="content" id="sec5">
+    <div data-role="collapsible" data-collapsed="false">
+    <h3>유의사항</h3>
+    <ul>
+    <li>클라쓰 마감후 취소ㆍ예약변경 불가해요!</li>
+    <li>현재12명 진행(190㎡)일반 24명 수련공간</li>
+    <li>디스크 질환 있는분 미리 말씀주세요.</li>
+    <li>귀중품은 가져오지 마세요. 소지시 지참!</li>
+    </ul>
+    <div data-role="collapsible">
+     <h3>주차정보</h3>
+     <p>무료주차 : 주말 5시간/ 평일 3시간 </p></div>
+    <div data-role="collapsible">
+      <h3>예약취소</h3>
+      <p>결제 후 1시간 이내에는 무료 취소가 가능합니다.<br>
+      (단, 신청마감 이후 취소 시, 환불불가)<br>
+      예약취소시 위약금은 호스트와 무관하오니<br> 
+      고객센터(02-123-4567)에 문의 해주세요</p>
+     </div>
+    
+   </div>
+  </div>
+  
+  <!--content4 -->
+  <div data-role="content" class="content">
+  <p><h4>이런 클라쓰 어때요? &#127775;</h4>
+  <div class="ui-grid-b">
+   <div class="ui-block-a img3" ></div>
+   <div class="ui-block-b img3"></div>
+   <div class="ui-block-c img3"></div>
+   <div class="ui-block-a text1" >송파/강동</div>
+   <div class="ui-block-b text1">수원/화성</div>
+   <div class="ui-block-c text1">강남/서초</div>
+   <div class="ui-block-a text2" >yogaG 요가 스튜디오</div>
+   <div class="ui-block-b text2">체형교정&코어강화 필라테스</div>
+   <div class="ui-block-c text2">[강남]힐링 런치 요가(소규모)</div>
+   <div class="ui-block-a img4" ></div>
+   <div class="ui-block-b img4"></div>
+   <div class="ui-block-c img4"></div>
+   <div class="ui-block-a text1" >강북/중랑</div>
+   <div class="ui-block-b text1">경상전체</div>
+   <div class="ui-block-c text1">강원 전체</div>
+   <div class="ui-block-a text2" >한밤에 중랑천에서 즐기는 요가</div>
+   <div class="ui-block-b text2">브레인요가&명상(예약가능)</div>
+   <div class="ui-block-c text2">푸르메가 살고있는곳, 요가스튜디오</div>
+  </div>
+ </div>
+
+<!--footer바  -->
+  <div id="footer" data-role="footer" data-position="fixed">
+  <table width="100%">
+  <colgroup>
+   <col style="width: 20%">
+   <col style="width: 80%">
+  </colgroup>
+   <tr><td id="bookmark" onclick="bookmark()"><i class="fa-solid fa-bookmark"></i><br>6,370</td>
+   <td style="background:#475aff; color:white; border-radius: 20px;">참여하기</td></tr>
+   </table>
+  </div>
+ </div>
+</body>
+</html>

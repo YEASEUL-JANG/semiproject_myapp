@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://kit.fontawesome.com/fdfee59c02.js" crossorigin="anonymous"></script>
+<style type="text/css">
+#header{background: white;}
+.ui-header .ui-title{
+font-size: 1.2em;
+}
+#table1{
+margin: 0px 10px;
+}
+#table1 img{
+width:50px; height:50px;
+border-radius: 30px;
+}
+#table2{
+width: 100%;
+margin: 10px;}
+#table3{
+height: 150px;
+font-size: 12px;
+text-align: center;
+width:100%;
+max-width: 500px;
+color: #666666;
+padding: 5px;
+}
+#table3 img{
+width:70px; height:70px;
+border-radius: 25px;
+}
+.ui-block-a,.ui-block-b{
+margin:5px 0px;
+max-width:200px;
+}
+.ui-block-a.text0,.ui-block-b.text0{
+color:white;
+font-size:15px;
+display: flex;
+align-items: center;
+padding:10px;
+}
+.ui-block-a.text1,.ui-block-b.text1{
+font-size: 7px;
+color: #afafaf; }
+.ui-block-a.text2,.ui-block-b.text2{
+font-size: 12px;
+color: #666666;}
+.ui-block-a.text3,.ui-block-b.text3{
+font-size: 9px;}
+.ui-block-a.price,.ui-block-b.price{
+font-size: 12px;
+font-weight:bold;}
+.ui-block-a.img1,.ui-block-a.img2,.ui-block-b.img1,.ui-block-b.img2 {
+background-repeat : no-repeat;
+background-size: 100% 100%;
+height: 150px; width:175px; 
+cursor:pointer;
+}
+.ui-block-a.img3,.ui-block-a.img4,.ui-block-b.img3,.ui-block-b.img4 {
+background-repeat : no-repeat;
+background-size: 100% 100%;
+height: 150px; width:175px; 
+cursor:pointer;
+}
+.ui-block-a.img1{
+background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url("image/pilates01.png");
+}
+.ui-block-b.img1{
+background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url("image/english.jpg");
+}
+.ui-block-a.img2{
+background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url("image/diary.jpg");
+}
+.ui-block-b.img2{
+background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url("image/loveme.jpg");
+}
+.ui-block-a.img3{
+background-image: url("image/beer.jpg");
+}
+.ui-block-b.img3{
+background-image: url("image/diving.jpg");
+}
+.ui-block-a.img4{
+background-image: url("image/hanoak.jpg");
+}
+.ui-block-b.img4{
+background-image:url("image/surfing.jpg");
+}
+.slidebox{
+margin:0; padding:0;box-sizing:border-box;}
+
+.slidebox ul, .slidebox li{
+list-style: none;
+padding:0px;
+margin:0px;}
+
+[name="slide"]{display:none;}
+
+.slidebox{max-width:500px; width:100%;margin:0px;text-align:center;}
+.slidebox img{max-width:100%;
+}
+.slidebox .slidelist{
+white-space:nowrap;
+font-size:0;
+overflow:hidden;
+}
+.slidebox .slideitem{
+ position: relative;
+ display: inline-block;
+ vertical-align:middle;
+ width:100%;
+ transition:all .35s;
+}
+.slidebox .slideitem label{
+position: absolute;
+z-index:1;
+top:50%;
+transform:translateY(-50%);
+padding:20px;
+border-radius: 50%;
+cursor:pointer;
+}
+label.left{
+ left:20px;
+ opacity: 0.8;
+ background-image:url("image/left-arrow.png");
+ background-position:center center;
+ background-size: 50%;
+ background-repeat:no-repeat;
+}
+label.right{
+ right:20px;
+ opacity: 0.8;
+ background-image:url("image/right-arrow.png");
+ background-position:center center;
+ background-size: 50%;
+ background-repeat:no-repeat;
+}
+[id="slide01"]:checked ~ .slidelist .slideitem{transform:translateX(0); animation:slide01 20s infinite;}
+[id="slide02"]:checked ~ .slidelist .slideitem{transform:translateX(-100%);animation:slide02 20s infinite;}
+[id="slide03"]:checked ~ .slidelist .slideitem{transform:translateX(-200%);animation:slide03 20s infinite;}
+[id="slide04"]:checked ~ .slidelist .slideitem{transform:translateX(-300%);animation:slide04 20s infinite;}
+
+@keyframes slide01 {
+	0% {left:0%;}
+	23% {left:0%;}
+	25% {left:-100%;}
+	48% {left:-100%;}
+	50% {left:-200%;}
+	73% {left:-200%;}
+	75% {left:-300%;}
+	98% {left:-300%;}
+	100% {left:0%;}
+}
+@keyframes slide02 {
+	0% {left:0%;}
+	23% {left:0%;}
+	25% {left:-100%;}
+	48% {left:-100%;}
+	50% {left:-200%;}
+	73% {left:-200%;}
+	75% {left:100%;}
+	98% {left:100%;}
+	100% {left:0%;}
+}
+@keyframes slide03 {
+	0% {left:0%;}
+	23% {left:0%;}
+	25% {left:-100%;}
+	48% {left:-100%;}
+	50% {left:200%;}
+	73% {left:200%;}
+	75% {left:100%;}
+	98% {left:100%;}
+	100% {left:0%;}
+}
+@keyframes slide04 {
+	0% {left:0%;}
+	23% {left:0%;}
+	25% {left:300%;}
+	48% {left:300%;}
+	50% {left:200%;}
+	73% {left:200%;}
+	75% {left:100%;}
+	98% {left:100%;}
+	100% {left:0%;}
+}
+#footer{
+background: white;
+text-align: center;
+display: flex;
+justify-content: space-around;
+font-size: 12px;
+padding : 10px;
+}
+#page1{
+background: white;
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+.content{
+background: white;
+margin: 10px 0px;
+padding: 10px;
+display: flex;
+align-items: left;
+max-width: 1000px;
+flex-direction: column;
+}
+.title{
+align-items: left;
+padding: 0px 20px;
+margin: 20px 0px;
+}
+#darkmod{
+display: flex;
+justify-content: flex-end;
+font-size: 12px;
+}
+#panelmenu{
+display: inline;
+}
+#footer i{font-size: 20px;}
+a:link{text-decoration:none;color: #666666;}
+a:visited{text-decoration:none;color: #666666;}
+a:hover{text-decoration:none;color: #666666;}
+#footer a:link{text-decoration:none;color: #666666;}
+#footer a:visited{text-decoration:none;color: #666666;}
+#footer a:hover{text-decoration:none;color: #666666;}
+
+</style>
+<script type="text/javascript">
+function nightmod(){
+	var nightmod = document.getElementById("nightmod");
+	for(var i=0; i<nightmod.length; i++){
+	if(nightmod.value=="night"){
+		document.getElementById("page1").style.backgroundColor = "black";
+		document.getElementsByClassName("content")[0].style.backgroundColor = "black";
+		document.getElementsByClassName("content")[1].style.backgroundColor = "black";
+		document.getElementsByClassName("content")[2].style.backgroundColor = "black";
+		document.getElementsByClassName("content")[3].style.backgroundColor = "black";
+		document.getElementById("footer").style.backgroundColor = "black";
+		document.getElementById("footer").style.color = "white";
+		document.getElementById("page1").style.color = "white";
+	}else{
+		document.getElementById("page1").style.backgroundColor = "white";
+		document.getElementsByClassName("content")[0].style.backgroundColor = "white";
+		document.getElementsByClassName("content")[1].style.backgroundColor = "white";
+		document.getElementsByClassName("content")[2].style.backgroundColor = "white";
+		document.getElementsByClassName("content")[3].style.backgroundColor = "white";
+		document.getElementById("footer").style.backgroundColor = "white";
+		document.getElementById("footer").style.color = "black";
+		document.getElementById("page1").style.color = "black";
+	}
+  }
+}
+</script>
+</head>
+<body>
+
+
+<!-- 본문영역  -->
+<div data-role="page" id="page1">
+<!-- 메뉴패널 -->
+ <div data-role="panel" id="panel_menu" data-display="overlay" data-theme="a">
+   <p class="ul-li-aside"><a href="#" data-rel="close"><i class="fa-solid fa-xmark"></i></a></p>
+  <table id="table1">
+   <tr>
+    <td rowspan="2"><img src="image/nobody.png" width="50px" height="50px" ></td>
+    <td style="color:#666666;font-size:13px;">
+    <a href="login.html" rel="external">&nbsp;로그인 해주세요.</a></td> </tr>
+   <tr><td style="color:#afafaf; font-size:10px;">&nbsp;신규대원 5만원 쿠폰팩 지급!</td></tr>
+  </table>
+   <p><table id="table2" >
+   <colgroup><col style="width:25%"><col style="width:25%">
+   <col style="width:25%"><col style="width:25%"></colgroup>
+   <tr style="font-size:13px;color:#666666;">
+    <td>에너지</td><td>쿠폰</td><td>쿠폰</td><td>쿠폰</td>
+    </tr>
+    <tr style="font-size:20px;color:#666666;font-weight:bold;">
+    <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr>
+  </table><br>
+  <ul data-role="listview" id="menulist">
+   <li data-role="listdivider" style="font-size: 13px; color:#afafaf; ">내 활동</li>
+    <li><a href="#">결제내역</a></li>
+    <li><a href="#">친구초대</a></li>
+    <li data-role="listdivider" style="font-size: 13px; color:#afafaf; ">고객센터</li>
+    <li><a href="#">공지사항</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">고객센터 문의</a></li>
+    <li data-role="listdivider"style="font-size: 13px; color:#afafaf; ">설정</li>
+    <li><a href="#">설정</a></li>
+    <li><a href="#">약관 및 정책</a></li>
+    <li><a href="#">오픈소스 라이선스</a></li>
+  </ul>
+ </div>
+	<!-- 헤더  -->
+   <div data-role="header" data-position="fixed" id="header">
+  <a href="#panel_menu"  id="panelmenu" data-role="none" style="font-size: 20px; padding: 10px;">
+  <i class="fa-solid fa-bars"></i></a>
+  <a href="#" data-role="none"style="margin: 10px;"><select id="nightmod" data-role="slider" onchange="nightmod()">
+  <option value="day" selected>주간</option>
+  <option value="night">야간</option>
+  </select></a>
+  </div>
+   <!--content1 -->
+  <div data-role="content" class="content">
+  <p>
+   <h1>물속으로 DIVE🏄<br>클라쓰로 DIVE!</h1>
+    <!-- 검색바 -->
+   <div data-role="fieldcontain">
+    <input type="search" name="search" size="50" placeholder="클래스명을 검색하세요." style="margin:10px;">
+    </div>
+    <!-- 카테고리배너 -->
+    <table id="table3" >
+    <tr>
+     <td style="cursor:pointer;"><a href="fitness.html" rel="external"><img src="image/health01.png"></a></td>
+     <td style="cursor:pointer;"><img src="image/baking.jpg"></td>
+     <td style="cursor:pointer;"><img src="image/date.jpg"></td>
+     <td style="cursor:pointer;"><img src="image/art.jpg"></td>
+     </tr><tr>
+     <td>피트니스</td><td>베이킹</td><td>데이트추천</td><td>공예</td></tr>
+     <tr>
+     <td style="cursor:pointer;"><img src="image/hawai.jpg"></td>
+     <td style="cursor:pointer;"><img src="image/surfing.jpg"></td>
+     <td style="cursor:pointer;"><img src="image/diy.jpg"></td>
+     <td style="cursor:pointer;"><img src="image/sea.jpg"></td>
+    </tr><tr>
+     <td>하와이여행</td><td>서핑</td><td>공예/DIY</td><td>부산여행</td></tr>
+    </table>
+  </div>
+  
+  <!-- content2 -->
+  <div data-role="content" class="content">
+  <h4>다른 지역 클래스들도<br>구경하세요!</h4>
+  <p><h4>새해다짐을 되새길 때 📅</h4>
+  <div class="ui-grid-a">
+   <div class="ui-block-a img1 text0" onclick="location.href='yoga.html';">자세교정&<br>체형교정 마스터과정</div>
+   <div class="ui-block-b img1 text0" >단어는 아는데<br>문장은 못 만들어?</div>
+   <div class="ui-block-a text1" >온라인</div>
+   <div class="ui-block-b text1">온라인</div>
+   <div class="ui-block-a text2" >[강남] 자세교정 요가클리닉 교정프로그램</div>
+   <div class="ui-block-b text2">하루 15분 영어,쉬운문장에서 복잡한 문장까지!</div>
+   <div class="ui-block-a text3" >⭐⭐⭐⭐⭐ 후기 315</div>
+   <div class="ui-block-b text3">⭐⭐⭐⭐⭐ 후기 66</div>
+   <div class="ui-block-a price" >20,000원</div>
+   <div class="ui-block-b price">30,000원</div>
+   <div class="ui-block-a img2 text0" >노션으로<br>함께 하루 계획하기</div>
+   <div class="ui-block-b img2 text0">하루 한 번,<br>나를 위한 칭찬</div>
+   <div class="ui-block-a text1" >온라인</div>
+   <div class="ui-block-b text1">온라인</div>
+   <div class="ui-block-a text2" >[5일]노션으로 하루 계획하기: 내삶에 집중하는 법</div>
+   <div class="ui-block-b text2">긍정의 기운으로 시작하는 토닥토닥,나 칭찬하기</div>
+   <div class="ui-block-a text3" >⭐⭐⭐⭐⭐ 후기 103</div>
+   <div class="ui-block-b text3">⭐⭐⭐⭐ 후기 87</div>
+   <div class="ui-block-a price" >15,000원</div>
+   <div class="ui-block-b price">10,000원</div>
+  </div>
+ </div>
+  
+  <!--slide banner -->
+  <div data-role="content" class="content" style="padding:0px;">
+  <p><h4>오늘의 photo 👀</h4>
+    <div class="slidebox">
+     <input data-role="none" type="radio" name="slide" id="slide01" checked>
+     <input data-role="none"type="radio" name="slide" id="slide02">
+     <input data-role="none"type="radio" name="slide" id="slide03">
+     <input data-role="none"type="radio" name="slide" id="slide04">
+     <ul class="slidelist">
+      <li class="slideitem">
+       <div>
+        <label for="slide04" class="left"></label>
+        <label for="slide02" class="right"></label>
+        <a><img src="image/slideimg01.jpg"></a>
+       </div>
+      </li>
+      <li class="slideitem">
+       <div>
+        <label for="slide01" class="left"></label>
+        <label for="slide03" class="right"></label>
+        <a><img src="image/slideimg02.jpg"> </a>
+       </div>
+      </li>
+      <li class="slideitem">
+       <div>
+        <label for="slide02" class="left"></label>
+        <label for="slide04" class="right"></label>
+        <a><img src="image/slideimg03.jpg"> </a>
+       </div>
+      </li>
+      <li class="slideitem">
+       <div>
+        <label for="slide03" class="left"></label>
+        <label for="slide01" class="right"></label>
+        <a><img src="image/slideimg04.jpg"> </a>
+       </div>
+      </li>
+     </ul>
+    </div>
+  </div>
+  
+  <!--content4 -->
+  <div data-role="content" class="content">
+  <p><h4>주간 BEST 클라쓰 &#127775;</h4>
+  <div class="ui-grid-a">
+   <div class="ui-block-a img3 text0" ></div>
+   <div class="ui-block-b img3 text0"></div>
+   <div class="ui-block-a text1" >송파/강동</div>
+   <div class="ui-block-b text1">수원/화성</div>
+   <div class="ui-block-a text2" >술술 놀면서 수제맥주 만들기</div>
+   <div class="ui-block-b text2">수중전문작가와 함께 인어공주 되는법!</div>
+   <div class="ui-block-a text3" >⭐⭐⭐⭐⭐ 후기 1038</div>
+   <div class="ui-block-b text3">⭐⭐⭐⭐⭐ 후기 9</div>
+   <div class="ui-block-a price" >20,000원</div>
+   <div class="ui-block-b price">30,000원</div>
+   <div class="ui-block-a img4 text0" ></div>
+   <div class="ui-block-b img4 text0"></div>
+   <div class="ui-block-a text1" >종로/중구</div>
+   <div class="ui-block-b text1">강원 전체</div>
+   <div class="ui-block-a text2" >고즈넉한 한옥 공방에서 나만의 향수만들기</div>
+   <div class="ui-block-b text2">버스타고 당일치기 서핑가자!</div>
+   <div class="ui-block-a text3" >⭐⭐⭐⭐⭐ 후기 478</div>
+   <div class="ui-block-b text3">⭐⭐⭐⭐ 후기 26</div>
+   <div class="ui-block-a price" >15,000원</div>
+   <div class="ui-block-b price">10,000원</div>
+  </div>
+ </div>
+
+<!--footer바  -->
+  <div id="footer" data-role="footer" data-position="fixed">
+   <span><a href="index.html" rel="external"><i class="fa-solid fa-house"></i><br>홈</a></span>
+   <span><a href="category.html" rel="external"><i class="fa-solid fa-bars"></i><br>카테고리</a></span>
+   <span><a href="feed.html" rel="external"><i class="fa-solid fa-border-all"></i><br>피드</a></span>
+   <span><a href="bookmark.jsp" rel="external"><i class="fa-solid fa-bookmark"></i><br>북마크</a></span>
+   <span><a href="login.jsp" rel="external"><i class="fa-solid fa-user"></i><br>로그인</a></span>
+  </div>
+ </div>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fitness</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://kit.fontawesome.com/fdfee59c02.js" crossorigin="anonymous"></script>
+<style type="text/css">
+#header{background: white;}
+.ui-header .ui-title{
+font-size: 1.2em;
+margin: 10px;
+}
+#table1{
+margin: 0px 10px;
+}
+#table1 img{
+width:50px; height:50px;
+border-radius: 30px;
+}
+#table2{
+width: 100%;
+margin: 10px;}
+#table3{
+height: 150px;
+font-size: 12px;
+text-align: center;
+width:100%;
+max-width: 500px;
+color: #666666;
+padding: 5px;
+}
+#table3 img{
+width:70px; height:70px;
+border-radius: 25px;
+}
+.ui-block-a,.ui-block-b{
+margin:5px 0px;
+max-width:200px;
+}
+.ui-block-a.text0,.ui-block-b.text0{
+color:white;
+font-size:15px;
+display: flex;
+align-items: center;
+padding:10px;
+}
+.ui-block-a.text1,.ui-block-b.text1{
+font-size: 7px;
+color: #afafaf; }
+.ui-block-a.text2,.ui-block-b.text2{
+font-size: 12px;
+color: #666666;}
+.ui-block-a.text3,.ui-block-b.text3{
+font-size: 9px;}
+.ui-block-a.price,.ui-block-b.price{
+font-size: 12px;
+font-weight:bold;}
+.ui-block-a.img1,.ui-block-a.img2,.ui-block-b.img1,.ui-block-b.img2,
+.ui-block-a.img3,.ui-block-a.img4,.ui-block-b.img3,.ui-block-b.img4,
+.ui-block-a.img5,.ui-block-a.img6,.ui-block-b.img5,.ui-block-b.img6 {
+background-repeat : no-repeat;
+background-size: 100% 100%;
+height: 150px; width:170px; 
+cursor:pointer;
+}
+.ui-block-a.img1{
+background-image: url("image/pilates01.png");
+}
+.ui-block-b.img1{
+background-image: url("image/pilates02.png");
+}
+.ui-block-a.img2{
+background-image: url("image/pilates03.png");
+}
+.ui-block-b.img2{
+background-image: url("image/pilates04.png");
+}
+.ui-block-a.img3{
+background-image: url("image/yoga01.png");
+}
+.ui-block-b.img3{
+background-image: url("image/yoga02.png");
+}
+.ui-block-a.img4{
+background-image: url("image/yoga03.png");
+}
+.ui-block-b.img4{
+background-image:url("image/yoga04.png");
+}
+.ui-block-a.img5{
+background-image: url("image/health01.png");
+}
+.ui-block-b.img5{
+background-image: url("image/health02.png");
+}
+.ui-block-a.img6{
+background-image: url("image/health03.png");
+}
+.ui-block-b.img6{
+background-image:url("image/health04.png");
+}
+.slidebox{
+margin:0; padding:0;box-sizing:border-box;}
+
+#footer{
+background: white;
+text-align: center;
+display: flex;
+justify-content: space-around;
+font-size: 12px;
+padding : 10px;
+}
+#page1{
+background: white;
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+#navbar ul{
+display : flex;
+align-items: center;
+}
+.content{
+background: white;
+margin: 0px;
+padding: 7px;
+display: flex;
+align-items: left;
+max-width: 1000px;
+flex-direction: column;
+}
+.title{
+align-items: left;
+padding: 0px 20px;
+margin: 20px 0px;
+}
+#darkmod{
+display: flex;
+justify-content: flex-end;
+font-size: 12px;
+}
+#panelmenu{
+display: inline;
+}
+#footer i{font-size: 20px;}
+a:link{text-decoration:none;color: #666666;}
+a:visited{text-decoration:none;color: #666666;}
+a:hover{text-decoration:none;color: #666666;}
+#footer a:link{text-decoration:none;color: #666666;}
+#footer a:visited{text-decoration:none;color: #666666;}
+#footer a:hover{text-decoration:none;color: #666666;}
+
+</style>
+<script type="text/javascript">
+function nightmod(){
+	var nightmod = document.getElementById("nightmod");
+	for(var i=0; i<nightmod.length; i++){
+	if(nightmod.value=="night"){
+		document.getElementById("page1").style.backgroundColor = "black";
+		document.getElementById("header").style.backgroundColor = "black";
+		document.getElementsByClassName("content")[0].style.backgroundColor = "black";
+		document.getElementsByClassName("content")[1].style.backgroundColor = "black";
+		document.getElementsByClassName("content")[2].style.backgroundColor = "black";
+		document.getElementsByClassName("content")[3].style.backgroundColor = "black";
+		document.getElementById("footer").style.backgroundColor = "black";
+		document.getElementById("page1").style.color = "white";
+		document.getElementById("header").style.color = "white";
+	}else{
+		document.getElementById("page1").style.backgroundColor = "white";
+		document.getElementById("header").style.backgroundColor = "white";
+		document.getElementsByClassName("content")[0].style.backgroundColor = "white";
+		document.getElementsByClassName("content")[1].style.backgroundColor = "white";
+		document.getElementsByClassName("content")[2].style.backgroundColor = "white";
+		document.getElementsByClassName("content")[3].style.backgroundColor = "white";
+		document.getElementById("footer").style.backgroundColor = "white";
+		document.getElementById("page1").style.color = "black";
+		document.getElementById("header").style.color = "black";
+	}
+  }
+}
+</script>
+</head>
+<body>
+
+
+<!-- 본문영역  -->
+<div data-role="page" id="page1">
+	<!-- 헤더  -->
+   <div data-role="header" data-position="fixed" id="header">
+  <a href="#" data-role="none" style="font-size: 20px; padding: 10px;" data-rel="back">
+  <i class="fa-solid fa-arrow-left"></i></a> 
+  <h1>카테고리</h1>
+  <a href="#" data-role="none"style="margin: 10px;">
+  <select id="nightmod" data-role="slider" onchange="nightmod()">
+  <option value="day" selected>주간</option>
+  <option value="night">야간</option>
+  </select></a>
+  </div>
+   <!--content1 -->
+  <div data-role="content" class="content">
+  <p>
+   <h1>피트니스</h1>
+  <!-- Tabs -->
+  <div data-role="tabs">
+   <div data-role="navbar" id="navbar">
+    <ul>
+     <li><a href="#sec2" class="ui-btn-active">요가</a></li>
+     <li><a href="#sec3">필라테스</a></li>
+     <li><a href="#sec4">헬스/PT</a></li>
+    </ul>
+  </div>
+  <!-- Tabs_(1) -->
+  <div id="sec2" class="content">
+  <div class="ui-grid-a">
+   <div class="ui-block-a img1" onclick="location.href='yoga.html';"></div>
+   <div class="ui-block-b img1" ></div>
+   <div class="ui-block-a text1" >강남</div>
+   <div class="ui-block-b text1">성수</div>
+   <div class="ui-block-a text2" >[강남] 자세교정 요가클리닉 교정프로그램</div>
+   <div class="ui-block-b text2">[성수/서울숲] 주말 아침을 여는 요가원데이</div>
+   <div class="ui-block-a text3" >⭐⭐⭐⭐⭐ 후기 315</div>
+   <div class="ui-block-b text3">⭐⭐⭐⭐⭐ 후기 66</div>
+   <div class="ui-block-a price" >20,000원</div>
+   <div class="ui-block-b price">30,000원</div>
+   <div class="ui-block-a img2" ></div>
+   <div class="ui-block-b img2"></div>
+   <div class="ui-block-a text1" >성수</div>
+   <div class="ui-block-b text1">서초</div>
+   <div class="ui-block-a text2" >체형교정&코어강화 필라테스/요가</div>
+   <div class="ui-block-b text2">삶의 질을 놓여주는 체형교정(1:1/소규모)</div>
+   <div class="ui-block-a text3" >⭐⭐⭐⭐⭐ 후기 103</div>
+   <div class="ui-block-b text3">⭐⭐⭐⭐ 후기 87</div>
+   <div class="ui-block-a price" >15,000원</div>
+   <div class="ui-block-b price">10,000원</div>
+  </div>
+ </div>
+   <!-- Tabs_(2) -->
+  <div id="sec3" class="content">
+  <div class="ui-grid-a">
+   <div class="ui-block-a img3 text0" ></div>
+   <div class="ui-block-b img3 text0"></div>
+   <div class="ui-block-a text1" >송파/강동</div>
+   <div class="ui-block-b text1">수원/화성</div>
+   <div class="ui-block-a text2" >바른자세 체형교정 건강한 다이어트(소규모)</div>
+   <div class="ui-block-b text2">후기맛집! 필라테스&피티(예약가능)</div>
+   <div class="ui-block-a text3" >⭐⭐⭐⭐⭐ 후기 1038</div>
+   <div class="ui-block-b text3">⭐⭐⭐⭐⭐ 후기 9</div>
+   <div class="ui-block-a price" >20,000원</div>
+   <div class="ui-block-b price">30,000원</div>
+   <div class="ui-block-a img4 text0" ></div>
+   <div class="ui-block-b img4 text0"></div>
+   <div class="ui-block-a text1" >청담</div>
+   <div class="ui-block-b text1">동대문</div>
+   <div class="ui-block-a text2" >청담동 프라이빗 필라테스(예약가능)</div>
+   <div class="ui-block-b text2">[동대문]예쁘게 바로잡자!필라테스/요가</div>
+   <div class="ui-block-a text3" >⭐⭐⭐⭐⭐ 후기 478</div>
+   <div class="ui-block-b text3">⭐⭐⭐⭐ 후기 26</div>
+   <div class="ui-block-a price" >15,000원</div>
+   <div class="ui-block-b price">10,000원</div>
+  </div>
+ </div>
+  <!-- Tabs_(3) -->
+  <div id="sec4" class="content">
+  <div class="ui-grid-a">
+   <div class="ui-block-a img5 text0" ></div>
+   <div class="ui-block-b img5 text0"></div>
+   <div class="ui-block-a text1" >송파/강동</div>
+   <div class="ui-block-b text1">강남</div>
+   <div class="ui-block-a text2" >초보자도 할 수 있는 일요일 팀운동</div>
+   <div class="ui-block-b text2">[강남구청]1:1 프라이빗 체형교정 클래스</div>
+   <div class="ui-block-a text3" >⭐⭐⭐⭐⭐ 후기 1038</div>
+   <div class="ui-block-b text3">⭐⭐⭐⭐⭐ 후기 9</div>
+   <div class="ui-block-a price" >20,000원</div>
+   <div class="ui-block-b price">30,000원</div>
+   <div class="ui-block-a img6 text0" ></div>
+   <div class="ui-block-b img6 text0"></div>
+   <div class="ui-block-a text1" >서초</div>
+   <div class="ui-block-b text1">광진</div>
+   <div class="ui-block-a text2" >1:1체형평가, 통증개선을 기본으로하는 헬스</div>
+   <div class="ui-block-b text2">피트니스로 즐겁게 다이어트하기!</div>
+   <div class="ui-block-a text3" >⭐⭐⭐⭐⭐ 후기 478</div>
+   <div class="ui-block-b text3">⭐⭐⭐⭐ 후기 26</div>
+   <div class="ui-block-a price" >15,000원</div>
+   <div class="ui-block-b price">10,000원</div>
+  </div>
+ </div>
+</div><!-- tab -->
+</div>
+<!--footer바  -->
+  <div id="footer" data-role="footer" data-position="fixed">
+   <span><a href="index.html" rel="external"><i class="fa-solid fa-house"></i><br>홈</a></span>
+   <span><a href="category.html" rel="external"><i class="fa-solid fa-bars"></i><br>카테고리</a></span>
+   <span><a href="feed.html" rel="external"><i class="fa-solid fa-border-all"></i><br>피드</a></span>
+   <span><a href="bookmark.jsp" rel="external"><i class="fa-solid fa-bookmark"></i><br>북마크</a></span>
+   <span><a href="login.jsp" rel="external"><i class="fa-solid fa-user"></i><br>로그인</a></span>
+  </div>
+</div><!-- 페이지끝 -->
+</body>
+</html>
